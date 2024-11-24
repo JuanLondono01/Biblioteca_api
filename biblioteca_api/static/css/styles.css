@@ -1,0 +1,297 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+header {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    height: 6rem;
+    font-size: 2rem;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+header nav ul {
+    display: flex;
+    gap: 4rem;
+}
+
+header li {
+    list-style: none;
+    padding-inline: 1rem;
+    border-radius: 6px;
+}
+
+header li:nth-child(1) {
+    background-color: skyblue;
+}
+
+header li:nth-child(1) a {
+    color: white;
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+}
+
+main {
+    height: 100dvh;
+}
+
+.libros_fisicos,
+.libros_digitales {
+    height: 12rem;
+    overflow-y: scroll;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    padding-block: 2rem;
+}
+
+.sep-fis {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.sep-fis li {
+    list-style: none;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 100%;
+}
+
+.sep-dig {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.sep-dig li {
+    list-style: none;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 100%;
+}
+
+.opciones {
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.opciones i {
+    cursor: pointer;
+}
+
+.libro_card {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background-color: #f4f4f4;
+    justify-content: space-around;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.libro_card p {
+    width: max-content;
+    padding-inline: 1rem;
+    width: 100%;
+    text-align: center;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
+.libro_card {
+    border-right: 10px solid skyblue;
+}
+
+.libro_card_dig {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    background-color: #f4f4f4;
+    justify-content: space-around;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.libro_card_dig p {
+    width: max-content;
+    padding-inline: 1rem;
+    width: 100%;
+    text-align: center;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
+.libro_card_dig {
+    border-right: 10px solid skyblue;
+}
+.modal.active + main {
+    filter: blur(8px);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+    position: absolute;
+    width: 100%;
+}
+
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid skyblue;
+    border-radius: 6px;
+    z-index: 1000;
+    height: fit-content;
+    box-shadow: 0 0 10px black;
+}
+
+.close-btn {
+    margin-top: 10px;
+    height: 2rem;
+    border-radius: 6px;
+    background-color: transparent;
+    border: 1px solid skyblue;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.close-btn:hover {
+    background-color: skyblue;
+    color: white;
+}
+
+.modal.active {
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-top: 2rem;
+    border: 1px solid black;
+}
+
+/* Estilo para los campos del formulario */
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Estilo para el botón de enviar */
+form button {
+    padding: 10px 15px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+}
+
+/* Cambio de color cuando el botón se pasa el mouse por encima */
+form button:hover {
+    background-color: #45a049;
+}
+
+/* Estilo para los parágrafos generados por form.as_p */
+form p {
+    margin: 0 0 10px;
+}
+
+form input[type='number']::-webkit-outer-spin-button,
+form input[type='number']::-webkit-inner-spin-button {
+    display: none;
+}
+
+#show-form {
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 6px;
+    background-color: transparent;
+    border: 1px solid skyblue;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.search-container {
+    margin: 2rem auto;
+    text-align: center;
+}
+
+#searchInput {
+    width: 60%;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+#searchBtn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.results {
+    margin: 2rem auto;
+    width: 80%;
+    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.result-card {
+    background: white;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: calc(33% - 1rem);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.result-card p {
+    margin: 0.5rem 0;
+    width: 45%;
+}

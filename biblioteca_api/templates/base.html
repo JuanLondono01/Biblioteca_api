@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script defer src="{% static 'js/main.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+        <script src="https://kit.fontawesome.com/499df900a3.js" crossorigin="anonymous"></script>
+        <title>Sistema Biblioteca</title>
+    </head>
+    <body>
+        <header>
+            <h1>Sistema Biblioteca</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="{% url 'buscar_libros'%}">Buscar Libros</a></li>
+                    <li><button id="show-form">Agregar libro</button></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="modal" class="modal">
+            <h3>Seleccione el tipo de libro</h3>
+            <div class="types">
+                <label>
+                    <input type="radio" name="type" class="radio" value="fisico" />
+                    Físico
+                </label>
+                <label>
+                    <input type="radio" name="type" class="radio" value="digital" />
+                    Digital
+                </label>
+            </div>
+            <div id="form-container" class="form"></div>
+            <button class="close-btn">Cerrar</button>
+        </div>
+
+        <main>
+            <section>
+                <h2>Libros Físicos</h2>
+                <ul class="sep-fis">
+                    <li>Titulo</li>
+                    <li>Autor</li>
+                    <li>Fecha</li>
+                    <li>Paginas</li>
+                </ul>
+                <ul id="libros-fisicos" class="libros_fisicos"></ul>
+            </section>
+            <section>
+                <h2>Libros Digitales</h2>
+                <ul class="sep-dig">
+                    <li>Titulo</li>
+                    <li>Autor</li>
+                    <li>Fecha</li>
+                    <li>Tamaño</li>
+                    <li>Formato</li>
+                </ul>
+                <ul id="libros-digitales" class="libros_digitales"></ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy;2024. Todos los derechos reservados. Sistema Biblioteca</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="{% static 'js/search.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Buscar Libros</title>
+</head>
+<body>
+    <header>
+        <h1>Sistema Biblioteca</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="{% url 'buscar_libros' %}">Buscar Libros</a></li>
+                <li><button id="show-form">Agregar libro</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Buscar Libros</h2>
+            <input type="text" id="searchInput" placeholder="Escribe el título o autor">
+            <button id="searchBtn">Buscar</button>
+            <div id="resultsContainer" class='search-res'></div>
+        </section>
+    </main>
+
+</body>
+</html>
